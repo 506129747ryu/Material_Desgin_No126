@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         String str = "This 2 bed/ 1bath home boasts an enormous, \nopen-living plan, accented by striking \narchitectural features an high-end finishes. \nFeel inspired by open sight lines that \nembrace the outdoors, crowned by stunning\ncoffered ceilings.";
         ItemsArraylist.add(new ItemsDomain("House with a great view", "San Francisco, CA 94110", str, 2, 1, 841456, "pic1", true));
-        ItemsArraylist.add(new ItemsDomain("House with a great view", "San Francisco, CA 94110", str, 3, 1, 65490, "pic2", true));
-        ItemsArraylist.add(new ItemsDomain("House with a great view", "San Francisco, CA 94110", str, 3, 1, 841456, "pic3", true));
+        ItemsArraylist.add(new ItemsDomain("House with a great view", "San Francisco, CA 94110", str, 3, 1, 65490, "pic2", false));
+        ItemsArraylist.add(new ItemsDomain("House with a great view", "San Francisco, CA 94110", str, 3, 1, 841456, "pic1", true));
 
         recyclerViewPopular = findViewById(R.id.viewPopular);
         recyclerViewNew = findViewById(R.id.viewNew);
@@ -51,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
         adapterNew = new ItemsAdapter(ItemsArraylist);
         adapterPopular = new ItemsAdapter(ItemsArraylist);
 
+        recyclerViewPopular.setAdapter(adapterPopular);
         recyclerViewNew.setAdapter(adapterNew);
-        recyclerViewNew.setAdapter(adapterPopular);
+
 
     }
 }
